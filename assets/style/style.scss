@@ -1,0 +1,966 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Black.woff2);
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-BlackItalic.woff2);
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Bold.woff2);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Medium.woff2);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Italic.woff2);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Light.woff2);
+  font-weight: 300;
+  font-style: normal;
+}
+
+// roots
+$dark: #212121;
+$black: #000;
+$blue: #0e3775;
+$lightBg: #f5f5f5;
+$border: #f9f9f9;
+$navbarBorder: #e0e0e0;
+$link: #383b3f;
+$white: #fff;
+$bars: #626262;
+$adsBorder: #e8e8e8;
+$tag: #dbdbdb;
+$tagText: #1e1e1e;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Satoshi", sans-serif;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.container-fluid {
+  max-width: 752px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media screen and (min-width: 1140px) {
+  .container,
+  .container-fluid {
+    padding: 0;
+  }
+}
+
+// global
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.full__image {
+  overflow: hidden;
+  border-radius: 4px;
+  img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+  }
+}
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+
+// button
+.btn {
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  &.btn__blue {
+    background: $blue;
+    color: $white;
+    font: 500 16px / normal "Satoshi";
+    border: 1px solid transparent;
+    transition: background 0.3s ease;
+    &:hover {
+      background: $white;
+      color: $blue;
+      border-color: $blue;
+    }
+    @media screen and (min-width: 576px) {
+      font: 500 19px / normal "Satoshi";
+    }
+  }
+  @media screen and (min-width: 576px) {
+    padding: 12px 24px;
+  }
+}
+
+// bars
+.bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  background: none;
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: $bars;
+  }
+}
+
+// navbar
+nav {
+  border-bottom: 1px solid $navbarBorder;
+  padding: 12px 0;
+  @media screen and (min-width: 576px) {
+    nav {
+      padding: 16px 0;
+    }
+  }
+}
+.nav {
+  &__content,
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__left {
+    gap: 64px;
+
+    ul {
+      list-style: none;
+      gap: 32px;
+      display: none;
+      @media screen and (min-width: 992px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      a {
+        color: $link;
+        font: 500 19px / normal "Satoshi";
+        transition: color 0.5s ease;
+        position: relative;
+        z-index: 0;
+        &::after {
+          content: "";
+          width: 0;
+          height: 2px;
+          background: $blue;
+          position: absolute;
+          right: 0;
+          bottom: -2px;
+          transition: all 0.3s ease;
+        }
+        &:hover {
+          color: $blue;
+          &::after {
+            right: auto;
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &__right {
+    gap: 16px;
+  }
+  &__logo {
+    width: 100px;
+    @media screen and (min-width: 576px) {
+      width: 170px;
+    }
+  }
+}
+
+// ads cards
+.ads {
+  &__content {
+    .ads__cards {
+      padding: 25px 0 22px 0;
+      border-bottom: 1px solid $adsBorder;
+    }
+  }
+  //   cards
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    @media screen and (min-width: 576px) {
+      flex-wrap: nowrap;
+      gap: 24px;
+    }
+    .ads__card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $adsBorder;
+      @media screen and (min-width: 576px) {
+        width: 364px;
+        padding-right: 24px;
+        border: none;
+        border-right: 1px solid $adsBorder;
+      }
+      &--title {
+        color: $black;
+        font: 500 16px / normal "Satoshi";
+        @media screen and (min-width: 576px) {
+          font: 700 18px / normal "Satoshi";
+        }
+      }
+
+      &:last-child {
+        border: none;
+        padding-bottom: 0;
+      }
+
+      //   hover
+      &:hover {
+        .ads__card {
+          &--title {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ads cards tag
+.ads__card {
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    .ads__card--tag {
+      color: $blue;
+      font: 400 18px / normal "Satoshi";
+      position: relative;
+      z-index: 0;
+      &:nth-child(2) {
+        padding-left: 16px;
+        &::after {
+          content: ".";
+          position: absolute;
+          bottom: -10%;
+          left: 0;
+          font: 600 40px / normal "Satoshi";
+        }
+      }
+    }
+  }
+}
+
+// main
+.main {
+  padding: 24px 0 35px 0;
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-direction: column;
+    @media screen and (min-width: 992px) {
+      flex-direction: row;
+    }
+
+    //   reverse
+    &.reverse {
+      flex-direction: column-reverse;
+      @media screen and (min-width: 992px) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    @media screen and (min-width: 992px) {
+      width: 50%;
+    }
+    .main {
+      &__title {
+        color: $dark;
+        font: 500 16px / normal "Satoshi";
+        @media screen and (min-width: 576px) {
+          font: 900 32px/36px "Satoshi";
+        }
+      }
+      &__image {
+        width: 100%;
+        height: 200px;
+        position: relative;
+
+        @media screen and (min-width: 576px) {
+          height: 420px;
+        }
+        img {
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+    &:hover {
+      .main__image img {
+        transform: scale(1.05, 1.05);
+      }
+      .main__title {
+        color: $blue;
+      }
+    }
+
+    &.small {
+      .main {
+        &__title {
+          font: 500 16px / normal "Satoshi";
+          @media screen and (min-width: 576px) {
+            font: 900 28px/31px "Satoshi";
+          }
+        }
+        &__image {
+          @media screen and (min-width: 576px) {
+            height: 380px;
+          }
+        }
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    flex-direction: column;
+    @media screen and (min-width: 992px) {
+      width: 50%;
+      flex-direction: column;
+    }
+    .main__card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $adsBorder;
+      @media screen and (min-width: 576px) {
+        gap: 24px;
+      }
+      &:last-child {
+        border: none;
+        padding-bottom: 0;
+      }
+      &--text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .main__card {
+          &--title {
+            color: $dark;
+            font: 500 16px / normal "Satoshi";
+            @media screen and (min-width: 576px) {
+              font: 500 20px / normal "Satoshi";
+            }
+          }
+        }
+      }
+      &--image {
+        height: 100px;
+        border-radius: 4px;
+        width: 120px;
+        @media screen and (min-width: 576px) {
+          width: 260px;
+          height: 155px;
+        }
+      }
+      &:hover {
+        img {
+          transform: scale(1.05, 1.05);
+        }
+        .main__card {
+          &--title {
+            color: $blue;
+          }
+        }
+      }
+
+      &.reverse {
+        @media screen and (min-width: 992px) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+
+  &__tag {
+    position: absolute;
+    background: $white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    color: $black;
+    bottom: 12px;
+    left: 12px;
+    font: 700 14px / normal "Satoshi";
+    @media screen and (min-width: 576px) {
+      font: 700 16px / normal "Satoshi";
+      bottom: 24px;
+      left: 24px;
+    }
+  }
+}
+
+// cards
+.square {
+  &__cards {
+    padding: 24px 0 35px 0;
+    border-top: 2px solid $adsBorder;
+    border-bottom: 2px solid $adsBorder;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    @media screen and (min-width: 576px) {
+      gap: 16px;
+    }
+    @media screen and (min-width: 768px) {
+      gap: 24px;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+
+    @media screen and (min-width: 475px) {
+      min-height: 372px;
+      width: 47%;
+    }
+
+    @media screen and (min-width: 576px) {
+      width: 48%;
+    }
+
+    @media screen and (min-width: 992px) {
+      width: 31.5%;
+    }
+
+    &--image {
+      width: 100%;
+      height: 200px;
+
+      @media screen and (min-width: 768px) {
+        height: 250px;
+      }
+    }
+    &--title {
+      font: 500 16px / normal "Satoshi";
+      color: $dark;
+      @media screen and (min-width: 576px) {
+        font: 500 20px / normal "Satoshi";
+      }
+    }
+    //   hover
+    &:hover {
+      .square__card {
+        &--image {
+          img {
+            transform: scale(1.05, 1.05);
+          }
+        }
+        &--title {
+          color: $blue;
+        }
+      }
+    }
+  }
+  &__content.remove {
+    .square__cards {
+      border-top: none;
+    }
+  }
+}
+
+// banner
+.banner {
+  &__content {
+    padding: 24px 0;
+  }
+  &__cards {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    @media screen and (min-width: 576px) {
+      flex-direction: row;
+    }
+    &--image {
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      width: 100%;
+      height: 200px;
+      border-radius: 4px 4px 0 0;
+
+      @media screen and (min-width: 576px) {
+        flex: 1;
+        height: 100%;
+        border-radius: 4px 0 0 4px;
+      }
+    }
+    &--text {
+      background: $blue;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      padding: 16px;
+      @media screen and (min-width: 576px) {
+        flex: 2;
+        padding: 32px;
+      }
+    }
+    &--title {
+      color: $white;
+      font: 500 16px / normal "Satoshi";
+      @media screen and (min-width: 576px) {
+        font: 700 32px / normal "Satoshi";
+      }
+    }
+    &--link {
+      font: 500 16px / normal "Satoshi";
+      color: $white;
+      @media screen and (min-width: 576px) {
+        font: 700 18px / normal "Satoshi";
+      }
+    }
+
+    // hover
+    &:hover {
+      .banner__cards {
+        &--image {
+          img {
+            transform: scale(1.05, 1.05);
+          }
+        }
+      }
+    }
+  }
+}
+
+// main banners
+.main__banners .main__content {
+  padding: 24px 0 34px 0;
+  border-top: 2px solid $adsBorder;
+  border-bottom: 2px solid $adsBorder;
+}
+
+// author cards
+.author {
+  &__cards {
+    padding: 32px 0;
+    border-top: 2px solid $adsBorder;
+    border-bottom: 2px solid $adsBorder;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  &__line {
+    display: none;
+    @media screen and (min-width: 1200px) {
+      width: 1px;
+      background: $adsBorder;
+      display: block;
+    }
+  }
+  &__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-bottom: 1px solid $adsBorder;
+    padding-bottom: 24px;
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    @media screen and (min-width: 475px) {
+      width: 47%;
+    }
+    @media screen and (min-width: 576px) {
+      border: none;
+      padding: 0;
+      width: 47.5%;
+    }
+    @media screen and (min-width: 768px) {
+      width: 31%;
+    }
+    @media screen and (min-width: 992px) {
+      width: 31.5%;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 340px;
+    }
+    &--image {
+      width: 100%;
+      height: 200px;
+      @media screen and (min-width: 576px) {
+        height: 250px;
+      }
+    }
+    &--text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-height: 140px;
+      @media screen and (min-width: 576px) {
+        min-height: 200px;
+      }
+    }
+    &--title {
+      font: 700 16px / normal "Satoshi";
+      color: $dark;
+
+      @media screen and (min-width: 576px) {
+        font: 700 20px / normal "Satoshi";
+      }
+
+      span {
+        font: 400 16px / normal "Satoshi";
+        @media screen and (min-width: 576px) {
+          font: 400 20px / normal "Satoshi";
+        }
+        font-style: italic;
+      }
+    }
+    &--content {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &--heading {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .author__card {
+        &--name {
+          font: 700 16px / normal "Satoshi";
+          color: $black;
+          @media screen and (min-width: 576px) {
+            font: 700 20px / normal "Satoshi";
+          }
+        }
+        &--job {
+          font: 400 16px / normal "Satoshi";
+          font-style: italic;
+          color: $black;
+        }
+      }
+    }
+    &--user {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media screen and (min-width: 576px) {
+        width: 75px;
+        height: 75px;
+      }
+    }
+
+    &:hover {
+      .author__card {
+        &--image {
+          img {
+            transform: scale(1.05, 1.05);
+          }
+        }
+        &--title {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+// full banner
+.full__banner {
+  &__content {
+    padding: 24px 0 100px 0;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  padding: 24px;
+  min-height: 250px;
+  border-radius: 4px;
+  overflow: hidden;
+  @media screen and (min-width: 576px) {
+    min-height: 450px;
+    padding: 60px;
+  }
+  &--title {
+    font: 600 16px/24px "Satoshi";
+    color: $white;
+    width: 100%;
+    @media screen and (min-width: 576px) {
+      font: 900 32px/38px "Satoshi";
+    }
+    @media screen and (min-width: 992px) {
+      width: 80%;
+    }
+  }
+}
+
+// single page --------------------------
+.single {
+  padding: 32px 0;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    &--left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    &--right {
+      display: flex;
+    }
+  }
+
+  &__title {
+    font: 600 24px/32px "Satoshi";
+    @media screen and (min-width: 576px) {
+      font: 900 48px/62px "Satoshi";
+    }
+  }
+  &__body {
+    font: 500 16px/24px "Satoshi";
+    @media screen and (min-width: 576px) {
+      font: 500 24px / normal "Satoshi";
+    }
+  }
+  &__image {
+    height: 200px;
+    width: 100%;
+    @media screen and (min-width: 576px) {
+      height: 440px;
+    }
+  }
+  &__line {
+    width: 100%;
+    height: 1px;
+    background: $navbarBorder;
+  }
+
+  &__blue {
+    color: $blue;
+    font: 500 20px/30px "Satoshi";
+  }
+}
+
+// single tag and date
+.tag {
+  padding: 8px 16px;
+  border: 1px solid $tag;
+  border-radius: 88px;
+  color: $tagText;
+  font: 400 16px / normal "Satoshi";
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    background: $tagText;
+    color: $white;
+  }
+  &.big {
+    padding: 12px 20px;
+    color: $black;
+    font: 400 20px / normal "Satoshi";
+    background: $lightBg;
+    border: 1px solid transparent;
+    &:hover {
+      border-color: $black;
+    }
+  }
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.date {
+  color: $tagText;
+  font: 400 16px / normal "Satoshi";
+}
+
+.eye {
+  padding: 8px 16px;
+  border: 1px solid $border;
+  background: $lightBg;
+  border-radius: 88px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: default;
+  &__shape {
+    display: flex;
+    align-items: center;
+  }
+  &__text {
+    color: $tagText;
+    font: 400 16px / normal "Satoshi";
+  }
+}
+.socials {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  &__item {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $lightBg;
+    transition: border-color 0.3s ease;
+    border: 1px solid transparent;
+    &:hover {
+      border-color: $black;
+    }
+  }
+}
+
+// offcanvas
+.offcanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #00000045;
+  z-index: -1;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  flex-direction: row;
+  justify-content: flex-end;
+  &__box {
+    background: $white;
+    padding: 24px;
+    width: 95%;
+    transform: translateX(100%);
+    transition: transform 0.3s linear;
+    @media screen and (min-width: 992px) {
+      width: 30%;
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    .offcanvas__close {
+      border: 1px solid $black;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__body {
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      list-style: none;
+      a {
+        color: $black;
+        font: 500 18px/20px "Satoshi";
+        transition: color 0.3s ease;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+    .offcanvas__box {
+      transform: translateX(0);
+    }
+  }
+}

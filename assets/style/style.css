@@ -1,0 +1,955 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Black.woff2);
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-BlackItalic.woff2);
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Bold.woff2);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Medium.woff2);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Italic.woff2);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(./../fonts/Satoshi-Light.woff2);
+  font-weight: 300;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Satoshi", sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-fluid {
+  max-width: 752px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 1140px) {
+  .container,
+  .container-fluid {
+    padding: 0;
+  }
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.full__image {
+  overflow: hidden;
+  border-radius: 4px;
+}
+.full__image img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+}
+.btn.btn__blue {
+  background: #0e3775;
+  color: #fff;
+  font: 500 16px/normal "Satoshi";
+  border: 1px solid transparent;
+  transition: background 0.3s ease;
+}
+.btn.btn__blue:hover {
+  background: #fff;
+  color: #0e3775;
+  border-color: #0e3775;
+}
+@media screen and (min-width: 576px) {
+  .btn.btn__blue {
+    font: 500 19px/normal "Satoshi";
+  }
+}
+@media screen and (min-width: 576px) {
+  .btn {
+    padding: 12px 24px;
+  }
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  background: none;
+}
+.bars span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #626262;
+}
+
+nav {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 0;
+}
+@media screen and (min-width: 576px) {
+  nav nav {
+    padding: 16px 0;
+  }
+}
+
+.nav__content, .nav__left, .nav__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__left {
+  gap: 64px;
+}
+.nav__left ul {
+  list-style: none;
+  gap: 32px;
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .nav__left ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.nav__left ul a {
+  color: #383b3f;
+  font: 500 19px/normal "Satoshi";
+  transition: color 0.5s ease;
+  position: relative;
+  z-index: 0;
+}
+.nav__left ul a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #0e3775;
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  transition: all 0.3s ease;
+}
+.nav__left ul a:hover {
+  color: #0e3775;
+}
+.nav__left ul a:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+.nav__right {
+  gap: 16px;
+}
+.nav__logo {
+  width: 100px;
+}
+@media screen and (min-width: 576px) {
+  .nav__logo {
+    width: 170px;
+  }
+}
+
+.ads__content .ads__cards {
+  padding: 25px 0 22px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+.ads__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+@media screen and (min-width: 576px) {
+  .ads__cards {
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+}
+.ads__cards .ads__card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e8e8e8;
+}
+@media screen and (min-width: 576px) {
+  .ads__cards .ads__card {
+    width: 364px;
+    padding-right: 24px;
+    border: none;
+    border-right: 1px solid #e8e8e8;
+  }
+}
+.ads__cards .ads__card--title {
+  color: #000;
+  font: 500 16px/normal "Satoshi";
+}
+@media screen and (min-width: 576px) {
+  .ads__cards .ads__card--title {
+    font: 700 18px/normal "Satoshi";
+  }
+}
+.ads__cards .ads__card:last-child {
+  border: none;
+  padding-bottom: 0;
+}
+.ads__cards .ads__card:hover .ads__card--title {
+  color: #0e3775;
+}
+
+.ads__card__tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ads__card__tags .ads__card--tag {
+  color: #0e3775;
+  font: 400 18px/normal "Satoshi";
+  position: relative;
+  z-index: 0;
+}
+.ads__card__tags .ads__card--tag:nth-child(2) {
+  padding-left: 16px;
+}
+.ads__card__tags .ads__card--tag:nth-child(2)::after {
+  content: ".";
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  font: 600 40px/normal "Satoshi";
+}
+
+.main {
+  padding: 24px 0 35px 0;
+}
+.main__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  .main__content {
+    flex-direction: row;
+  }
+}
+.main__content.reverse {
+  flex-direction: column-reverse;
+}
+@media screen and (min-width: 992px) {
+  .main__content.reverse {
+    flex-direction: row-reverse;
+  }
+}
+.main__banner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+@media screen and (min-width: 992px) {
+  .main__banner {
+    width: 50%;
+  }
+}
+.main__banner .main__title {
+  color: #212121;
+  font: 500 16px/normal "Satoshi";
+}
+@media screen and (min-width: 576px) {
+  .main__banner .main__title {
+    font: 900 32px/36px "Satoshi";
+  }
+}
+.main__banner .main__image {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+@media screen and (min-width: 576px) {
+  .main__banner .main__image {
+    height: 420px;
+  }
+}
+.main__banner .main__image img {
+  transition: transform 0.3s ease;
+}
+.main__banner:hover .main__image img {
+  transform: scale(1.05, 1.05);
+}
+.main__banner:hover .main__title {
+  color: #0e3775;
+}
+.main__banner.small .main__title {
+  font: 500 16px/normal "Satoshi";
+}
+@media screen and (min-width: 576px) {
+  .main__banner.small .main__title {
+    font: 900 28px/31px "Satoshi";
+  }
+}
+@media screen and (min-width: 576px) {
+  .main__banner.small .main__image {
+    height: 380px;
+  }
+}
+.main__cards {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  .main__cards {
+    width: 50%;
+    flex-direction: column;
+  }
+}
+.main__cards .main__card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e8e8e8;
+}
+@media screen and (min-width: 576px) {
+  .main__cards .main__card {
+    gap: 24px;
+  }
+}
+.main__cards .main__card:last-child {
+  border: none;
+  padding-bottom: 0;
+}
+.main__cards .main__card--text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main__cards .main__card--text .main__card--title {
+  color: #212121;
+  font: 500 16px/normal "Satoshi";
+}
+@media screen and (min-width: 576px) {
+  .main__cards .main__card--text .main__card--title {
+    font: 500 20px/normal "Satoshi";
+  }
+}
+.main__cards .main__card--image {
+  height: 100px;
+  border-radius: 4px;
+  width: 120px;
+}
+@media screen and (min-width: 576px) {
+  .main__cards .main__card--image {
+    width: 260px;
+    height: 155px;
+  }
+}
+.main__cards .main__card:hover img {
+  transform: scale(1.05, 1.05);
+}
+.main__cards .main__card:hover .main__card--title {
+  color: #0e3775;
+}
+@media screen and (min-width: 992px) {
+  .main__cards .main__card.reverse {
+    flex-direction: row-reverse;
+  }
+}
+.main__tag {
+  position: absolute;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  color: #000;
+  bottom: 12px;
+  left: 12px;
+  font: 700 14px/normal "Satoshi";
+}
+@media screen and (min-width: 576px) {
+  .main__tag {
+    font: 700 16px/normal "Satoshi";
+    bottom: 24px;
+    left: 24px;
+  }
+}
+
+.square__cards {
+  padding: 24px 0 35px 0;
+  border-top: 2px solid #e8e8e8;
+  border-bottom: 2px solid #e8e8e8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+@media screen and (min-width: 576px) {
+  .square__cards {
+    gap: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .square__cards {
+    gap: 24px;
+  }
+}
+.square__card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+@media screen and (min-width: 475px) {
+  .square__card {
+    min-height: 372px;
+    width: 47%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .square__card {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .square__card {
+    width: 31.5%;
+  }
+}
+.square__card--image {
+  width: 100%;
+  height: 200px;
+}
+@media screen and (min-width: 768px) {
+  .square__card--image {
+    height: 250px;
+  }
+}
+.square__card--title {
+  font: 500 16px/normal "Satoshi";
+  color: #212121;
+}
+@media screen and (min-width: 576px) {
+  .square__card--title {
+    font: 500 20px/normal "Satoshi";
+  }
+}
+.square__card:hover .square__card--image img {
+  transform: scale(1.05, 1.05);
+}
+.square__card:hover .square__card--title {
+  color: #0e3775;
+}
+.square__content.remove .square__cards {
+  border-top: none;
+}
+
+.banner__content {
+  padding: 24px 0;
+}
+.banner__cards {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 576px) {
+  .banner__cards {
+    flex-direction: row;
+  }
+}
+.banner__cards--image {
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  border-radius: 4px 4px 0 0;
+}
+.banner__cards--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+@media screen and (min-width: 576px) {
+  .banner__cards--image {
+    flex: 1;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+  }
+}
+.banner__cards--text {
+  background: #0e3775;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 16px;
+}
+@media screen and (min-width: 576px) {
+  .banner__cards--text {
+    flex: 2;
+    padding: 32px;
+  }
+}
+.banner__cards--title {
+  color: #fff;
+  font: 500 16px/normal "Satoshi";
+}
+@media screen and (min-width: 576px) {
+  .banner__cards--title {
+    font: 700 32px/normal "Satoshi";
+  }
+}
+.banner__cards--link {
+  font: 500 16px/normal "Satoshi";
+  color: #fff;
+}
+@media screen and (min-width: 576px) {
+  .banner__cards--link {
+    font: 700 18px/normal "Satoshi";
+  }
+}
+.banner__cards:hover .banner__cards--image img {
+  transform: scale(1.05, 1.05);
+}
+
+.main__banners .main__content {
+  padding: 24px 0 34px 0;
+  border-top: 2px solid #e8e8e8;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.author__cards {
+  padding: 32px 0;
+  border-top: 2px solid #e8e8e8;
+  border-bottom: 2px solid #e8e8e8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.author__line {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .author__line {
+    width: 1px;
+    background: #e8e8e8;
+    display: block;
+  }
+}
+.author__card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 24px;
+}
+.author__card:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+@media screen and (min-width: 475px) {
+  .author__card {
+    width: 47%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .author__card {
+    border: none;
+    padding: 0;
+    width: 47.5%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .author__card {
+    width: 31%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .author__card {
+    width: 31.5%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .author__card {
+    width: 340px;
+  }
+}
+.author__card--image {
+  width: 100%;
+  height: 200px;
+}
+@media screen and (min-width: 576px) {
+  .author__card--image {
+    height: 250px;
+  }
+}
+.author__card--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 140px;
+}
+@media screen and (min-width: 576px) {
+  .author__card--text {
+    min-height: 200px;
+  }
+}
+.author__card--title {
+  font: 700 16px/normal "Satoshi";
+  color: #212121;
+}
+@media screen and (min-width: 576px) {
+  .author__card--title {
+    font: 700 20px/normal "Satoshi";
+  }
+}
+.author__card--title span {
+  font: 400 16px/normal "Satoshi";
+  font-style: italic;
+}
+@media screen and (min-width: 576px) {
+  .author__card--title span {
+    font: 400 20px/normal "Satoshi";
+  }
+}
+.author__card--content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.author__card--heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.author__card--heading .author__card--name {
+  font: 700 16px/normal "Satoshi";
+  color: #000;
+}
+@media screen and (min-width: 576px) {
+  .author__card--heading .author__card--name {
+    font: 700 20px/normal "Satoshi";
+  }
+}
+.author__card--heading .author__card--job {
+  font: 400 16px/normal "Satoshi";
+  font-style: italic;
+  color: #000;
+}
+.author__card--user {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.author__card--user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 576px) {
+  .author__card--user {
+    width: 75px;
+    height: 75px;
+  }
+}
+.author__card:hover .author__card--image img {
+  transform: scale(1.05, 1.05);
+}
+.author__card:hover .author__card--title {
+  color: #0e3775;
+}
+
+.full__banner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  padding: 24px;
+  min-height: 250px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.full__banner__content {
+  padding: 24px 0 100px 0;
+}
+@media screen and (min-width: 576px) {
+  .full__banner {
+    min-height: 450px;
+    padding: 60px;
+  }
+}
+.full__banner--title {
+  font: 600 16px/24px "Satoshi";
+  color: #fff;
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
+  .full__banner--title {
+    font: 900 32px/38px "Satoshi";
+  }
+}
+@media screen and (min-width: 992px) {
+  .full__banner--title {
+    width: 80%;
+  }
+}
+
+.single {
+  padding: 32px 0;
+}
+.single__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.single__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.single__header--left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.single__header--right {
+  display: flex;
+}
+.single__title {
+  font: 600 24px/32px "Satoshi";
+}
+@media screen and (min-width: 576px) {
+  .single__title {
+    font: 900 48px/62px "Satoshi";
+  }
+}
+.single__body {
+  font: 500 16px/24px "Satoshi";
+}
+@media screen and (min-width: 576px) {
+  .single__body {
+    font: 500 24px/normal "Satoshi";
+  }
+}
+.single__image {
+  height: 200px;
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
+  .single__image {
+    height: 440px;
+  }
+}
+.single__line {
+  width: 100%;
+  height: 1px;
+  background: #e0e0e0;
+}
+.single__blue {
+  color: #0e3775;
+  font: 500 20px/30px "Satoshi";
+}
+
+.tag {
+  padding: 8px 16px;
+  border: 1px solid #dbdbdb;
+  border-radius: 88px;
+  color: #1e1e1e;
+  font: 400 16px/normal "Satoshi";
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.tag:hover {
+  background: #1e1e1e;
+  color: #fff;
+}
+.tag.big {
+  padding: 12px 20px;
+  color: #000;
+  font: 400 20px/normal "Satoshi";
+  background: #f5f5f5;
+  border: 1px solid transparent;
+}
+.tag.big:hover {
+  border-color: #000;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.date {
+  color: #1e1e1e;
+  font: 400 16px/normal "Satoshi";
+}
+
+.eye {
+  padding: 8px 16px;
+  border: 1px solid #f9f9f9;
+  background: #f5f5f5;
+  border-radius: 88px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: default;
+}
+.eye__shape {
+  display: flex;
+  align-items: center;
+}
+.eye__text {
+  color: #1e1e1e;
+  font: 400 16px/normal "Satoshi";
+}
+
+.socials {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.socials__item {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  transition: border-color 0.3s ease;
+  border: 1px solid transparent;
+}
+.socials__item:hover {
+  border-color: #000;
+}
+
+.offcanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2705882353);
+  z-index: -1;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.offcanvas__box {
+  background: #fff;
+  padding: 24px;
+  width: 95%;
+  transform: translateX(100%);
+  transition: transform 0.3s linear;
+}
+@media screen and (min-width: 992px) {
+  .offcanvas__box {
+    width: 30%;
+  }
+}
+.offcanvas__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.offcanvas__header .offcanvas__close {
+  border: 1px solid #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.offcanvas__body .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+}
+.offcanvas__body .menu a {
+  color: #000;
+  font: 500 18px/20px "Satoshi";
+  transition: color 0.3s ease;
+}
+.offcanvas__body .menu a:hover {
+  color: #0e3775;
+}
+.offcanvas.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 999;
+}
+.offcanvas.active .offcanvas__box {
+  transform: translateX(0);
+}/*# sourceMappingURL=style.css.map */
