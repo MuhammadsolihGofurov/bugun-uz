@@ -964,3 +964,139 @@ nav {
     }
   }
 }
+
+// footer
+footer {
+  background: $dark;
+  padding: 20px 0;
+}
+.footer {
+  &__top {
+    display: flex;
+    // align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+    .footer__logo {
+      width: 120px;
+    }
+    &--left {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      border-right: 2px solid $white;
+      @media screen and (min-width: 1200px) {
+        display: flex;
+      }
+    }
+    &--right {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex: 2;
+      .footer__top {
+        &--links {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          flex: 1;
+          @media screen and (min-width: 576px) {
+            gap: 12px;
+          }
+        }
+        &--menu {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          a {
+            color: $white;
+            font: 600 18px/24px "Satoshi";
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
+        &--icon {
+          display: none;
+          @media screen and (min-width: 1200px) {
+            display: flex;
+          }
+        }
+      }
+      .footer {
+        &__body {
+          color: $adsBorder;
+          font: 400 16px/20px "Satoshi";
+        }
+      }
+    }
+    &--mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: 12px;
+      p {
+        flex: 1;
+      }
+      @media screen and (min-width: 1200px) {
+        display: none;
+      }
+    }
+  }
+  &__copy {
+    color: $white;
+    font: 400 16px/20px "Satoshi";
+    @media screen and (min-width: 576px) {
+      font: 500 16px/20px "Satoshi";
+    }
+  }
+  &__bottom {
+    display: flex;
+    padding: 24px;
+    background: $link;
+    border-radius: 12px;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 576px) {
+      gap: 32px;
+      padding: 32px;
+    }
+    &--title {
+      color: $white;
+      font: 600 20px/24px "Satoshi";
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: block;
+      }
+    }
+    .socials {
+      &__items {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      &__icons {
+        width: 40px;
+        height: 40px;
+        background: $white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &__text {
+        color: $white;
+        font: 500 20px/24px "Satoshi";
+        display: none;
+        @media screen and (min-width: 768px) {
+          display: block;
+        }
+      }
+    }
+  }
+}
